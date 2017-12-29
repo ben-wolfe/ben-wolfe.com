@@ -1,0 +1,288 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #424242;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+nav, ul {
+	list-style: none
+}
+
+a {
+	text-decoration: none; 
+}
+
+header {
+	position: fixed;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(255,255,255,0.95);
+	height: 60px;
+}
+
+header nav {
+	display: flex;
+}
+
+header nav li {
+	margin: auto 10px;
+	font-weight: 100;
+	font-size: 20px;
+}
+
+
+.sub-section {
+	max-width: 1100px;
+	margin: auto;
+	width: 90%;
+	padding: 60px 0;
+}
+
+.hr-section {
+	width: 100%;
+	height: 1px;
+	background-color: #03A9F4;
+	opacity: 0.2;
+	border: 0;
+}
+
+.hr-content {
+	margin: auto;
+	width: 100%;
+	height: 1px;
+	background-color: #03A9F4;
+	border: 0;
+}
+
+h1 {
+	font-weight: 400;
+	font-size: 72px;
+}
+
+h2 {
+	font-weight: 100;
+	font-size: 36px;
+}
+
+h3 {
+	font-weight: 300;
+	font-size: 36px;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+h5 {
+	font-weight: 400;
+	font-size: 18px;
+}
+
+section:nth-child(odd) {
+	background-color: #FAFAFA;
+}
+
+.home {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	text-align: center;
+}
+
+.wrap {
+	font-weight: 100;
+	border-right: 1px solid #424242;
+}
+
+/* --------------- ABOUT ME --------------- */
+
+.profile-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-me {
+	font-size: 18px;
+	font-weight: 300;
+	width: 65%;
+	margin-top: 35px;
+	line-height: 1.5;
+}
+
+#profile-img {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #03A9F4;
+    margin: auto 75px auto 0;
+}
+
+
+/* --------------- EDUCATION --------------- */
+
+.education-card {
+	border: 0.5px solid #6CCBF6;
+	padding: 20px;
+	margin: 35px auto;
+	box-shadow: 0 2px 4px #BCBCBC;
+}
+
+.hr-education {
+	margin: auto;
+	width: 100%;
+	height: 1px;
+	background-color: #D0D0D0;
+	border: 0;
+}
+
+.degree {
+	/*border: 0.5px solid #979797;*/
+	display: flex;
+	align-items: center;
+}
+
+.deg-desc {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	border-left: 1px solid #979797;
+}
+
+.degree-icon {
+	width: 40px;
+	height: 40px;
+}
+
+.extra-deg-info {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.degree {
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.deg-loc-date {
+	text-align: right;
+}
+
+.course-card {
+	border: 0.5px solid #979797;
+	padding: 25px;
+	margin-top: 25px
+}
+
+.completed-courses {
+	display: flex;
+	justify-content: space-around;
+}
+ 
+.course-card {
+	text-align: center;
+}
+
+.hr-online-topic {
+	margin: 10px auto;
+	width: 50%;
+	height: 1px;
+	background-color: #6CCBF6;
+	border: 0;
+}
+
+.course-card li, .course-card p {
+	font-weight: 100;
+	font-size: 18px;
+}
+
+.course-card li {
+	margin: 2px auto;
+}
+
+.course-card strong {
+	margin-top: 10px;
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.course-card h5 {
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.course-topics {
+	margin-top: 15px;
+}
+
+/* --------------- SKILLS --------------- */
+
+.skill-container {
+  background-color: white;
+  margin: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: 0.5px solid #D8D8D8;
+  padding: 12px;
+  box-shadow: 0 2px 4px #BCBCBC;
+}
+
+.percent-indicator {
+  font-size: 18px;
+  margin: 0px;
+  width: 90%;
+  font-weight: 300;
+}
+
+.category-title {
+  text-align: center;
+  margin: 5px auto;
+  font-size: 20px;
+  width: 90%;
+}
+
+.hr-skill-category {
+  height: 1px;
+  background-color: #D8D8D8;
+  border: 0;
+}
+
+.outline {
+  width: 90%;
+  height: 6px; 
+  margin: 5px 0 15px;
+  border: 0.5px solid #03A9F4;
+}
+
+.slider {
+  width: 10%;
+  height: 100%;
+  background: #03A9F4;
+  -webkit-transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition:         all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.all-skills {
+	display: flex;
+	justify-content: space-around;
+}
+
+.left-skills .right-skills {
+	disply: flex;
+	flex-direction: column;
+}

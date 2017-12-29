@@ -3,341 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ben Wolfe</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+	<link rel="icon" href="bw_tab.ico">
+	<!-- Styles -->
+	<link rel="stylesheet" href="assets/css/header.css">
 	<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
 	<header>
 		<nav>
-			<li><a href="#about-me" onclick="smoothScroll('about-me');return false">About Me</a></li>
-			<li><a href="#education" onclick="smoothScroll('education'); return false">Education</a></li>
-			<li><a href="#skills">Skills</a></li>
-			<li><a href="#projects">Projects</a></li>
-			<li><a href="#work">Work</a></li> 
-			<li><a href="#contact">Contact</a></li>
+			<div id="hamburger">
+				<span class=""></span>
+				<span class=""></span>
+				<span class=""></span>
+			</div>
+		<ul class="main-menu">
+			<li class="menu-item"><a href="#">About Me</a></li>		
+			<li class="menu-item"><a href="#">Education</a></li>				
+			<li class="menu-item"><a href="#">Skills</a></li>
+			<li class="menu-item"><a href="#">Projects</a></li>
+			<li class="menu-item"><a href="#">Work</a></li>
+			<li class="menu-item"><a href="#">Contact</a></li>
+		</ul>
 		</nav>
 	</header>
 
-
-	<section class="home">
+	<section id="home">
 		<h1>HI, I'M BEN WOLFE</h1>
-		<h2>
-			An engineer with a passion for 
-			<span class="typewrite" data-period="2000" data-type='["innovation.", "technology.", "elegant design."]'></span>
-		</h2>	
+		<h2>An engineer with a passion for 
+			<span class="typewrite" data-period="2000" data-type='["innovation.", "technology.", "elegant design."]'>descriptive words</span>
+		</h2>
 	</section>
-
-
-	<!--=========================== 
-				ABOUT ME          
-		=========================-->
 
 	<section id="about-me">
-		<hr class="hr-section">
 		
-		<div class="sub-section">
-			<div class="sec-header">
-				<h3>About Me</h3>
-				<hr class="hr-content">				
-			</div>
-
-			<div class="profile-body">
-
-				<div class="profile-img">
-					<img id="profile-img" src="assets/images/profile.jpg" alt="">	
-				</div>
-
-				<div class="about-me">
-					<p>Thanks for stopping by!  I’m Ben Wolfe.  Officially, I am a mechanical engineering graduate who is currently pursing a second degree in computer science.  Less officially, I am simply someone who lives for innovative technology, elegant design, and revolutionary products!</p><br>
-
-					<p>
-					From an early age, I have loved technology — I distinctly remember the moment I bought my first iMac desktop.  I was 12 years old and was absolutely bewildered by the fact that so much power and possibility could fit in one sleek enclosure.  My goal is to bring this same feeling of awe to the end consumer on any project I touch.
-					</p><br>
-
-					<p>
-					My fascination for how the world works is what drove me to start my post-secondary education with mechanical engineering.  Nowadays, I spend most of my time programming.  I am happiest when working on software development for projects built on mechanical and software engineering with data at their core.  I am excited most by pushing limits and designing elegant solutions to complex problems.	
-					</p>				
-				</div>				
-			</div>
-		</div>
 	</section>
 
-
-
-
-	<!--=========================== 
-				EDUCATION        
-		=========================-->
-
-	<section id="education">
-	<hr class="hr-section">
-
-		<div class="sub-section">
-			<h3>Education</h3>
-			<hr class="hr-content">
-
-			<div class="education-card">
-				<h4>University</h4>
-				<hr class="hr-education">
-
-				<div class="degree">
-					<img class="degree-icon" src="assets/images/gears.png" alt="gear icon">
-					<div class="deg-desc">
-						<div>
-							<h5>Bachelor of Computer Science</h5>
-							<em class="extra-deg-info">Software Engineering Minor</em>
-							<p class="degree-info">GPA: 3.96/4.00</p>				
-						</div>
-						<div class="deg-loc-date">
-							<p>University of Victoria</p>
-							<p class="degree-info">2017 - Present</p>
-						</div>
-					</div>
-				</div>
-
-				<div class="degree">
-					<img class="degree-icon" src="assets/images/gears.png" alt="gear icon">
-					<div class="deg-desc">
-						<div>
-							<h5>Bachelor of Mechanical Engineering</h5>
-							<em class="extra-deg-info">Dean's List (Graduated Top 20% of my Class)</em>
-							<p class="degree-info">GPA: 3.88/4.00</p>				
-						</div>
-						<div class="deg-loc-date">
-							<p>University of Victoria</p>
-							<p class="degree-info">2012 - 2017</p>
-						</div>						
-					</div>
-				</div>
-
-			</div>
-
-			<div class="education-card">
-				<h4>Online Courses - Certificates of Completion</h4>
-				<hr class="hr-education">
-
-				<div class="completed-courses">
-					<div class="course-card">
-						<img class="degree-icon" src="assets/images/gears.png" alt="gear icon">
-						<hr class="hr-online-topic">
-						<h5>iOS Development</h5>
-						<p>60+ Hours</p>
-						<div class="course-topics">
-							<strong>Key Topics</strong>
-							<ul>
-								<li>Interface Builder</li>
-								<li>Xcode Auto-layout</li>
-								<li>Swift Programming</li>
-								<li>Firebase Integration</li>
-								<li>Core Data</li>
-							</ul>							
-						</div>
-					</div>
-					<div class="course-card">
-						<img class="degree-icon" src="assets/images/gears.png" alt="gear icon">
-						<hr class="hr-online-topic">
-						<h5>Python & Data Science</h5>
-						<p>35+ Hours</p>
-						<div class="course-topics">
-							<strong>Key Topics</strong>
-							<ul>
-								<li>Python Programming</li>
-								<li>Numpy, Pandas (Analysis)</li>
-								<li>Seaborn (Visualization)</li>
-								<li>Data Mining Models</li>
-							</ul>
-						</div>
-					</div>
-					<div class="course-card">
-						<img class="degree-icon" src="assets/images/gears.png" alt="gear icon">
-						<hr class="hr-online-topic">
-						<h5>Databases</h5>
-						<p>30+ Hours</p>
-						<div class="course-topics">
-						<strong>Key Topics</strong>
-							<ul>
-								<li>SQL Syntax</li>
-								<li>Constructing Queries</li>
-								<li>Designing Schemas</li>
-								<li>Relationship Types</li>
-							</ul>
-						</div>
-					</div>
-					<div class="course-card">
-						<img class="degree-icon" src="assets/images/gears.png" alt="gear icon">
-						<hr class="hr-online-topic">
-						<h5>Web Development</h5>
-						<p>100+ Hours</p>
-						<div class="course-topics">
-							<strong>Key Topics</strong>
-							<ul>
-								<li>HTML, CSS, JS</li>
-								<li>REST APIs and Routing</li>
-								<li>Node, Express, and Mongo</li>
-								<li>Python, Django, & SQLite</li>
-								<li>React & Redux</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<!--=========================== 
-				SKILLS          
-		=========================-->
-
-	<!-- Skill order: Expert (100), professional (90), advanced (80), skilled (70), intermediate (60), limited, beginner -->
-	<section id="skills" class="skills">
-		<hr class="hr-section">
-
-		<div class="sub-section">
-			<h3>Skills</h3>
-			<hr class="hr-content">
-
-			<div class="all-skills">
-				<div class="left-skills">
-					<div class="skill-container">
-						<div class="category-title">
-							<p class="category-title">Techniques</p>
-							<hr class="hr-skill-category">
-						</div>
-
-						<p class="percent-indicator">Requirements Engineering</p>
-						<div class="outline"><div class="slider" id="skill1" data-progress-percent="90"></div></div>	
-
-						<p class="percent-indicator">Data Analysis</p>
-						<div class="outline"><div class="slider" id="skill2" data-progress-percent="80"></div></div>	
-						
-						<p class="percent-indicator">Web Development</p>
-						<div class="outline"><div class="slider" id="skill3" data-progress-percent="70"></div></div>
-
-						<p class="percent-indicator">iOS Development</p>
-						<div class="outline"><div class="slider" id="skill3" data-progress-percent="60"></div></div>
-					</div>
-				</div>
-
-				<div class="center-skills">
-					<div class="skill-container">
-						<div class="category-title">
-							<p class="category-title">Languages</p>
-							<hr class="hr-skill-category">
-						</div>
-						<p class="percent-indicator">Python</p>
-						<div class="outline"><div class="slider" id="skill1" data-progress-percent="80"></div></div>	
-
-						<p class="percent-indicator">C</p>
-						<div class="outline"><div class="slider" id="skill2" data-progress-percent="80"></div></div>	
-						
-						<p class="percent-indicator">JavaScript</p>
-						<div class="outline"><div class="slider" id="skill3" data-progress-percent="70"></div></div>
-						
-						<p class="percent-indicator">HTML/CSS</p>
-						<div class="outline"><div class="slider" id="skill4" data-progress-percent="70"></div></div>	
-						
-						<p class="percent-indicator">SQL</p>
-						<div class="outline"><div class="slider" id="skill5" data-progress-percent="70"></div></div>	
-						
-						<p class="percent-indicator" id="skill6">Java</p>
-						<div class="outline"><div class="slider" data-progress-percent="60"></div></div>	
-						
-						<p class="percent-indicator" id="skill7">Swift</p>
-						<div class="outline"><div class="slider" data-progress-percent="60"></div></div>			
-					</div>				
-				</div>
-
-				<div class="right-skills">
-					<div class="skill-container">
-						<div class="category-title">
-							<p class="category-title">Soft Skills</p>
-							<hr class="hr-skill-category">
-						</div>
-
-						<p class="percent-indicator">Adaptability</p>
-						<div class="outline"><div class="slider" id="skill1" data-progress-percent="80"></div></div>	
-
-						<p class="percent-indicator">Communication</p>
-						<div class="outline"><div class="slider" id="skill2" data-progress-percent="80"></div></div>	
-						
-						<p class="percent-indicator">Collaboration</p>
-						<div class="outline"><div class="slider" id="skill3" data-progress-percent="80"></div></div>
-					</div>
-
-					<div class="skill-container">
-						<div class="category-title">
-							<p class="category-title">Design</p>
-							<hr class="hr-skill-category">
-						</div>
-
-						<p class="percent-indicator">Sketch</p>
-						<div class="outline"><div class="slider" id="skill1" data-progress-percent="80"></div></div>	
-
-						<p class="percent-indicator">Illustrator</p>
-						<div class="outline"><div class="slider" id="skill2" data-progress-percent="70"></div></div>	
-						
-						<p class="percent-indicator">InDesign</p>
-						<div class="outline"><div class="slider" id="skill3" data-progress-percent="60"></div></div>
-					</div>				
-				</div>
-			</div>
-		</div>	
-
-	</section>
-
-
-	<!--=========================== 
-				PROJECTS          
-		=========================-->
-
-	<section id="projects">
-		<hr class="hr-section">
-
-		<div class="sub-section">
-			<h3>Projects</h3>
-			<hr class="hr-content">
-			<img src="" alt="">
-			<img src="" alt="">
-			<img src="" alt="">
-		</div>
-	</section>
-
-
-	<!--=========================== 
-					WORK         
-		=========================-->
-
-	<section id="work">
-		<hr class="hr-section">
-		<div class="sub-section">
-			<h3>Work</h3>
-			<hr class="hr-content">
-		</div>
-	</section>
-
-	<!--=========================== 
-				CONTACT         
-		=========================-->
-
-	<section id="contact">
-		<hr class="hr-section">
-
-		<div class="sub-section">
-			<h3>Contact</h3>
-			<hr>
-			<div class="contact-bar">
-				<img src="" alt=""><a href=""></a></img>
-				<img src="" alt=""><a href=""></a></img>
-				<img src="" alt=""><a href=""></a></img>
-				<img src="" alt=""><a href=""></a></img>
-				<img src="" alt=""><a href=""></a></img>
-			</div>
-		</div>
-	</section>
-
-
-	<script rel="text/javascript" src="assets/js/index.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/header.js"></script>
+	<script src="assets/js/typewriter.js"></script>
 </body>
 </html>

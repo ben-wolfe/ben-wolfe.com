@@ -33,6 +33,11 @@ h3 {
 	text-align: center;
 }
 
+h4 {
+	margin-top: 0;
+	text-align: center;
+}
+
 section {
 	padding-bottom: 60px;
 }
@@ -48,9 +53,7 @@ section:nth-child(odd) {
 	border: 0;
 }
 
-/* -------------------------------------------------------------------------
-                                                                        HOME
-------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------- HOME */
 
 #home {
 	display: flex;
@@ -90,9 +93,7 @@ section:nth-child(odd) {
   }
 }
 
-/* -------------------------------------------------------------------------
-                                                                    ABOUT ME
-------------------------------------------------------------------------- */
+/* ------------------------------------------------------------- ABOUT ME */
 
 #about-me .section-content {
 	display: flex;
@@ -110,6 +111,12 @@ section:nth-child(odd) {
 	margin: 0;
 }
 
+/* ------------------------------------------------------------ EDUCATION */
+#education .education-block {
+	background-color: white;
+	border: 1px solid rgba(3,169,244,0.6);
+}
+
 /* -------------------------------------------------------------------------
                                                            RESPONSIVE LAYOUT
 ------------------------------------------------------------------------- */
@@ -120,6 +127,9 @@ section:nth-child(odd) {
 	h3 {
 		font-size: 36px;
 	}
+	#education .education-block {
+		padding: 30px;
+	}
 }
 
 /* -------------------------------------- TABLET AND MOBILE SHARED STYLES */
@@ -129,6 +139,13 @@ section:nth-child(odd) {
 	}
 	p {
 		font-size: 16px;
+	}
+	#about-me .section-content {
+		flex-direction: column;
+		text-align: center;
+	}
+	h4 {
+		font-size: 20px;
 	}
 }
 
@@ -148,6 +165,10 @@ section:nth-child(odd) {
 	h2 {
 		padding: 0;
 		font-size: 28px;
+	}
+	#about-me .section-content img {
+    width: 214px;
+    margin-bottom: 30px;
 	}
 }
 
@@ -178,6 +199,12 @@ section:nth-child(odd) {
 	    width: 264px;
 	    margin-right: 40px;
 	}
+	#about-me .section-content {
+		align-items: center;
+	}
+	h4 {
+		font-size: 24px;
+	}
 }
 
 /* -------------------------------------------------------- MOBILE STYLES */
@@ -201,7 +228,8 @@ section:nth-child(odd) {
 	#home .mobile {
 		display: block;
 	}
-	p {
-		text-align: center;
+	#about-me .section-content img {
+    width: 150px;
+    margin-bottom: 15px;
 	}
 }

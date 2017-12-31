@@ -268,7 +268,7 @@ hr {
 
 .work-experience-block .description-card {
 	background-color: white;
-	border: 0.5px solid rgba(3,169,244,0.6);
+	border: 1px solid rgba(3,169,244,0.6);
 	box-shadow: 0 2px 4px #CBCBCB;
 	padding: 20px;
 }
@@ -295,6 +295,24 @@ hr {
 
 .work-experience-block .description-card strong {
 	font-weight: 400;
+}
+
+/* --------------------------------------------------------------- CONTACT */
+#contact .icons {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0 auto;
+	width: 280px;
+	border: 1px solid rgba(3,169,244,0.6);
+	box-shadow: 0 2px 4px #DDDDDD;
+}
+
+#contact .icons img {
+	width: 30px;
+	vertical-align: middle;
 }
 
 /* -------------------------------------------------------------------------
@@ -434,6 +452,9 @@ hr {
 		position: relative;
 		max-width: calc(50% - 30px);
 		width: calc(50% - 30px);
+	}
+	#contact .icons {
+		margin-top: 30px;
 	}
 }
 
@@ -685,5 +706,8 @@ hr {
 		text-align: center;
 		width: 100%
 		max-width: 100%;
+	}
+	#contact .icons {
+		margin-top: 25px;
 	}
 }

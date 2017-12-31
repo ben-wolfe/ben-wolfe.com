@@ -9,48 +9,45 @@ body {
   padding: 0;
   color: #4A4A4A;
 }
-
 h1 {
 	font-weight: 400;
 	text-transform: uppercase;
 }
-
 h2 {
 	font-weight: 100;
 }
-
 h1, h2 {
 	margin: 0;
 }
-
 h3, h4, p {
 	font-weight: 300;
 }
-
 h3 {
 	margin-top: 0;
 	text-transform: uppercase;
 	text-align: center;
 }
-
 h4 {
 	margin-top: 0;
 	text-align: center;
 }
-
+strong {
+	font-weight: 400;
+}
 section {
 	padding-bottom: 60px;
 }
-
 section:nth-child(odd) {
 	background-color: #FAFAFA;
 }
-
-.section-hr {
+hr {
 	width: 100%;
 	height: 1px;
-	background-color: #03A9F4;
 	border: 0;
+}
+.section-hr {
+	background-color: #03A9F4;
+
 }
 
 /* ----------------------------------------------------------------- HOME */
@@ -65,16 +62,13 @@ section:nth-child(odd) {
 	height: 100vh;
 	text-align: center;
 }
-
 .typewrite {
 	border-right: 1px solid #4A4A4A;
 }
-
 .typewrite.blink {
 	animation: blink 1000ms step-end infinite;
 	-webkit-animation: blink 1000ms step-end infinite;
 }
-
 @-webkit-keyframes blink {
   from, to {
     border-right: 1px solid white;
@@ -83,7 +77,6 @@ section:nth-child(odd) {
     border-right: 1px solid #4A4A4A;
   }
 }
-
 @keyframes blink {
   from, to {
     border-right: 1px solid white;
@@ -100,21 +93,39 @@ section:nth-child(odd) {
 	justify-content: center;
 	align-items: center;
 }
-
 #about-me .section-content img {
     border-radius: 50%;
     border: 1px solid #03A9F4;
 }
-
 #about-me .section-content p {
 	line-height: 1.45em;
 	margin: 0;
 }
 
 /* ------------------------------------------------------------ EDUCATION */
-#education .education-block {
+
+.education-block {
 	background-color: white;
 	border: 1px solid rgba(3,169,244,0.6);
+}
+#education hr {
+	margin-top: 0;
+	background-color: rgba(3,169,244,0.6);	
+}
+#education .sub-block-hr {
+	width: 75px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.online-courses .sub-block {
+	text-align: center;
+}
+.university .description p, 
+.online-courses .sub-block p {
+	margin: 0;
+}
+.education-block {
+	box-shadow: 0 2px 4px #DDDDDD;
 }
 
 /* -------------------------------------------------------------------------
@@ -123,25 +134,71 @@ section:nth-child(odd) {
 
 
 /* ------------------------------------- TABLET AND DESKTOP SHARED STYLES */
+
 @media (min-width: 601px) {
 	h3 {
 		font-size: 36px;
 	}
-	#education .education-block {
+	.education-block {
+		margin-top: 30px;
 		padding: 30px;
+	}
+	#education .education-hr {
+	 background-color: rgba(3,169,244,0.6);
+	 margin-bottom: 20px;
+	}
+	#education .sub-block {
+		border: 1px solid rgba(208,208,208,0.6);
+	}
+	h4 {
+		margin-bottom: 20px;
+	}
+	#education .sub-block {
+		padding: 20px;
+	}
+	.university .sub-block {
+		display: flex;
+		align-items: center;
+		padding: 20px;
+	}
+	.university .sub-block-hr {
+		display: none;
+	}
+	.university img {
+		width: 40px;
+	}
+	.online-courses img {
+		height: 40px;
+	}
+	.university .description div:nth-child(2) {
+		text-align: right;
+	}
+	.university .description {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		border-left: 1px solid rgba(3,169,244,0.6);
+	}
+	.university .sub-block:last-child {
+		margin-top: 10px;
+	}
+	.online-courses .sub-block .topics {
+		margin-top: 10px;
+	}
+	.online-courses .container > div {
+		margin: 0;
 	}
 }
 
 /* -------------------------------------- TABLET AND MOBILE SHARED STYLES */
-@media (max-width: 899px) {
-	.section-hr {
-		margin-bottom: 30px;
-	}
-	p {
+
+@media (max-width: 1259px) {
+	p, strong {
 		font-size: 16px;
 	}
 	#about-me .section-content {
 		flex-direction: column;
+		margin-top: 30px;
 		text-align: center;
 	}
 	h4 {
@@ -150,6 +207,7 @@ section:nth-child(odd) {
 }
 
 /* -------------------------------------------------------- TABLET STYLES */
+
 @media (min-width: 601px) {
 	section {
 		padding-left: 50px;
@@ -170,10 +228,31 @@ section:nth-child(odd) {
     width: 214px;
     margin-bottom: 30px;
 	}
+	.university .description {
+		padding-left: 15px;
+		margin-left: 15px;
+	}
+	.online-courses .container {
+		flex-direction: column;
+	}
+	.online-courses .container > div {
+		display: flex;
+		width: 100%;
+	}
+	.online-courses .sub-block {
+		width: 50%;
+	}
+	.online-courses .container > div:first-child {
+		margin-bottom: 20px;
+	}
+	.online-courses .container .sub-block:not(:first-child) {
+		margin-left: 20px;
+	}
 }
 
-/* ------------------------------------------------------- DESKTOP STYLES */                                            
-@media (min-width: 900px) {
+/* ------------------------------------------------------- DESKTOP STYLES */        
+
+@media (min-width: 1260px) {
 	section {
 		padding-left: 125px;
 		padding-right: 125px;
@@ -189,11 +268,8 @@ section:nth-child(odd) {
 		padding-top: 2px;
 		font-size: 36px;
 	}
-	p {
+	p, strong {
 		font-size: 18px;
-	}
-	.section-hr {
-		margin-bottom: 50px;
 	}
 	#about-me .section-content img {
 	    width: 264px;
@@ -201,13 +277,38 @@ section:nth-child(odd) {
 	}
 	#about-me .section-content {
 		align-items: center;
+		margin-top: 50px;
 	}
 	h4 {
 		font-size: 24px;
 	}
+	.university .description {
+		padding-left: 20px;
+		margin-left: 20px;
+	}
+	.online-courses .container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+	.online-courses .container > div {
+		max-width: 50%;
+		flex-basis: 50%;
+	}
+	.online-courses .sub-block {
+		width: 50%;
+	}
+	.online-courses .container > div:first-child {
+		margin-right: 20px;
+		margin-bottom: 0;
+	}
+	.online-courses .container .sub-block:not(:first-child) {
+		margin-left: 20px;
+	}
 }
 
 /* -------------------------------------------------------- MOBILE STYLES */
+
 @media (max-width: 600px) {
 	section {
 		padding-left: 25px;
@@ -225,11 +326,49 @@ section:nth-child(odd) {
 		padding-top: 5px;
 		font-size: 18px;
 	}
+	h4 {
+		margin-bottom: 10px;
+	}
 	#home .mobile {
 		display: block;
 	}
 	#about-me .section-content img {
     width: 150px;
     margin-bottom: 15px;
+	}
+	.education-block {
+		margin-top: 25px;
+		padding: 25px;
+	}
+	.education-hr {
+	 background-color: rgba(3,169,244,0.6);
+	}
+	.online-courses img, .university img {
+		height: 40px;
+	}
+	.education-block .univeristy {
+		display: flex;
+		flex-direction; column;
+		width: 100%;
+	}
+	#education .sub-block {
+		text-align: center;
+		margin-top: 25px;
+	}
+	.university .sub-block:not(:last-child) {
+		border-bottom: 1px solid rgba(208,208,208,0.6);
+		padding-bottom: 25px;
+	}
+	.university .description div:not(:first-child),
+	.online-courses .sub-block .topics {
+		margin-top: 10px;
+	}
+	.online-courses .sub-block {
+		border-bottom: 1px solid rgba(208,208,208,0.6);
+		padding-bottom: 25px;
+	}
+	.online-courses .container > div:last-child .sub-block:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
 	}
 }

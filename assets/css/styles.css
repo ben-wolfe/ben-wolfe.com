@@ -31,6 +31,9 @@ h4 {
 	margin-top: 0;
 	text-align: center;
 }
+p {
+	margin: 0;
+}
 strong {
 	font-weight: 400;
 }
@@ -99,7 +102,6 @@ hr {
 }
 #about-me .section-content p {
 	line-height: 1.45em;
-	margin: 0;
 }
 
 /* ------------------------------------------------------------ EDUCATION */
@@ -120,13 +122,12 @@ hr {
 .online-courses .sub-block {
 	text-align: center;
 }
-.university .description p, 
-.online-courses .sub-block p {
-	margin: 0;
-}
 .education-block {
 	box-shadow: 0 2px 4px #DDDDDD;
 }
+
+/* --------------------------------------------------------------- SKILLS */
+
 
 /* -------------------------------------------------------------------------
                                                            RESPONSIVE LAYOUT
@@ -187,6 +188,66 @@ hr {
 	}
 	.online-courses .container > div {
 		margin: 0;
+	}
+	#skills .container {
+		display: flex;
+		max-width: 100%;
+		width: 100%;
+		padding-top: 30px;
+	}
+	.skill-container {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: left;
+		max-width: 33.333333%;
+		width: 33.333333%;
+	  padding: 30px;
+	  background-color: white;
+		border: 1px solid rgba(3,169,244,0.6);
+		box-shadow: 0 2px 4px #DDDDDD;
+	}
+	.skills {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid #D8D8D8;
+	}
+	.skill-container strong {
+		width: 100%;
+		max-width: 100%
+		text-align: center;
+	}
+	.container .skill-container:not(:last-child) {
+		margin-right: 30px;
+	}
+
+	.skills p:not(:first-child) {
+		margin-top: 10px;
+	}
+	.outline {
+		width: 100%;
+	  max-width: 100%;
+	  height: 6px; 
+	  margin-top: 5px;
+		border: 1px solid rgb(3,169,244);
+	}
+	.slider {
+	  width: 0%;
+	  height: 100%;
+	  background: #03A9F4;
+	  -webkit-transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	  -o-transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	  transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	.skill-hr {
+		background-color: #D8D8D8;
+		margin-top: 15px;
+		width: 80%;
 	}
 }
 
@@ -370,5 +431,61 @@ hr {
 	.online-courses .container > div:last-child .sub-block:last-child {
 		border-bottom: none;
 		padding-bottom: 0;
+	}
+
+
+
+	#skills .container {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+	}
+	.skill-container {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: left;
+	  padding: 25px;
+	  margin-top: 25px;
+	  background-color: white;
+		border: 1px solid rgba(3,169,244,0.6);
+		box-shadow: 0 2px 4px #DDDDDD;
+	}
+	.skills {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		max-width: 100%;
+		width: 100%;
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid #D8D8D8;
+	}
+	.skill-container strong {
+		width: 100%;
+		max-width: 100%;
+		text-align: center;
+	}
+	.skills p:not(:first-child) {
+		margin-top: 10px;
+	}
+	.outline {
+		width: 100%;
+	  max-width: 100%;
+	  height: 6px; 
+	  margin-top: 5px;
+		border: 1px solid #03A9F4;
+	}
+	.slider {
+	  width: 0%;
+	  height: 100%;
+	  background: #03A9F4;
+	  -webkit-transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	  -o-transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	  transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	.skill-hr {
+		background-color: #D8D8D8;
+		margin-top: 15px;
+		width: 80%;
 	}
 }

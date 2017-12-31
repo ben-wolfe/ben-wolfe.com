@@ -24,9 +24,9 @@ function loadMenu() {
 	});
 
 	pageLink.forEach(function(el) {
-		el.addEventListener("click", function() {
+		el.addEventListener("click", function(event) {
 			toggleDropdown();
-			smoothScroll(el.getAttribute("href"));
+			smoothScroll(el.getAttribute("href"), event);
 		});
 	});
 }
@@ -196,16 +196,15 @@ function elmYPosition(el) {
     return y-61; // 60px offset to account for header
 }
 
-function smoothScroll(el) {
+function smoothScroll(el,event) {
     var startY = currentYPosition();
     var stopY = elmYPosition(el);
     var distance = stopY > startY ? stopY - startY : startY - stopY;
 
-    if (distance < 100) {
-        scrollTo(0, stopY); 
-        return;
+    if (distance === 0) {
+        event.preventDefault()
     }
-
+    
     var speed = Math.round(distance / 100);
     if (speed >= 20) speed = 20;
     var step = Math.round(distance / 25);

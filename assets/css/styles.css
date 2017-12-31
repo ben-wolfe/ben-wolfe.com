@@ -1,12 +1,15 @@
 /* -------------------------------------------------------------------------
                                                                          ALL
 ------------------------------------------------------------------------- */
-
+*,
+*::before,
+*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body {
   font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   color: #4A4A4A;
 }
 h1 {
@@ -115,6 +118,8 @@ hr {
 	background-color: rgba(3,169,244,0.6);	
 }
 #education .sub-block-hr {
+	margin-left: auto;
+	margin-right: auto;
 	width: 75px;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -184,6 +189,112 @@ hr {
 	background-color: #D8D8D8;
 	margin-top: 15px;
 	width: 80%;
+}
+
+/* -------------------------------------------------------------- PROJECTS */
+
+#projects .container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.project {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	opacity: 0;
+	-webkit-transition: opacity 1000ms ease-in-out;
+	-o-transition: opacity 1000ms ease-in-out;
+	transition: opacity 1000ms ease-in-out;
+}
+.project.show {
+	opacity: 1.0;
+}
+#projects .container .project:not(:last-child) {
+	border-bottom: 1px solid rgba(208,208,208,0.6);
+}
+.project img {
+	width: 40px;
+}
+#projects .title-loc {
+	margin: 10px auto;
+}
+#projects .description {
+	width: 100%;
+}
+
+/* ------------------------------------------------------------------ WORK */
+
+.timeline {
+	position: relative;
+}
+
+.work-timeline {
+	display: flex;
+	flex-direction: column;
+}
+
+.vline {
+	position: absolute;
+	left: 50%;
+	width: 1px;
+	height: 100%;
+	background-color: rgba(66,66,66,0.6);
+	left: 50%;
+	top: 0;
+}
+
+.work-experience-block {
+	display: flex;
+	width: 100%;
+	font-weight: 300;
+	color: #424242;
+	opacity: 0;
+	-webkit-transition: all 750ms ease-in-out;
+	-o-transition: all 750ms ease-in-out;
+	transition: all 750ms ease-in-out;	
+	-webkit-transition-property: opacity, margin, -webkit-transform;
+	transition-property: opacity, margin, -webkit-transform;
+	-o-transition-property: opacity, margin, transform;
+	transition-property: opacity, margin, transform;
+	transition-property: opacity, margin, transform, -webkit-transform;
+	}
+
+.work-experience-block.in-view {
+	opacity: 1.0;
+}
+
+.work-experience-block .description-card {
+	background-color: white;
+	border: 0.5px solid rgba(3,169,244,0.6);
+	box-shadow: 0 2px 4px #CBCBCB;
+	padding: 20px;
+}
+
+.work-experience-block .date-loc {
+	position: relative;
+}
+
+.work-experience-block .date-loc::after {
+	content: '';
+	position: absolute;
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background-color: #03A9F4;
+}
+
+.work-experience-block .description-card hr {
+	border: 0;
+	height: 1px;
+	margin: 10px auto;
+	background-color: #D0D0D0;
+}
+
+.work-experience-block .description-card strong {
+	font-weight: 400;
 }
 
 /* -------------------------------------------------------------------------
@@ -259,6 +370,71 @@ hr {
 	.container .skill-container:not(:last-child) {
 		margin-right: 30px;
 	}
+	#projects .container {
+		margin-top: 30px;
+	}
+	#projects .container .project:not(:last-child) {
+		padding-bottom: 20px;
+	}
+	#projects .container .project:not(:first-child) {
+		margin-top: 20px;
+	}
+	.timeline {
+		margin-top: 30px;
+	}
+	.work-experience-block {
+		align-items: center;
+		font-size: 18px;
+	}
+	.work-experience-block:nth-child(odd) {
+		justify-content: flex-end;
+		transform: translateX(45px);
+	}
+	.work-experience-block:nth-child(even) {
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		transform: translateX(-45px);
+	}
+	.work-experience-block:nth-child(odd).in-view {
+		transform: translateX(0px);
+	}
+	.work-experience-block:nth-child(even).in-view {
+		transform: translateX(0px);
+	}
+	.work-experience-block:nth-child(odd) .date-loc {
+		margin-right: 61px;
+	}
+	.work-experience-block:nth-child(even) .date-loc {
+		margin-left: 61px;
+	}
+	.work-experience-block:nth-child(odd) .date-loc::after {
+		bottom: calc(50% - 5px);
+		left: calc(100% + 26px);
+	}
+	.work-experience-block:nth-child(even) .date-loc::after {
+		bottom: calc(50% - 5px);
+		right: calc(100% + 25px);
+	}
+	.work-experience-block .description-card::before {
+		content: '';
+		position: absolute;
+		width: 30px;
+		height: 1px;
+		background-color: rgba(3,169,244,0.6);
+	}
+	.work-experience-block:nth-child(odd) .description-card::before {
+		bottom: 50%;
+		right: 100%;
+	}
+	.work-experience-block:nth-child(even) .description-card::before {
+		bottom: 50%;
+		left: 100%;
+	}
+	.work-experience-block .description-card {
+		position: relative;
+		max-width: calc(50% - 30px);
+		width: calc(50% - 30px);
+	}
 }
 
 /* -------------------------------------- TABLET AND MOBILE SHARED STYLES */
@@ -319,6 +495,9 @@ hr {
 	.online-courses .container .sub-block:not(:first-child) {
 		margin-left: 20px;
 	}
+	.project {
+		width: 85%;
+	}
 }
 
 /* ------------------------------------------------------- DESKTOP STYLES */        
@@ -375,6 +554,9 @@ hr {
 	}
 	.online-courses .container .sub-block:not(:first-child) {
 		margin-left: 20px;
+	}
+	.project {
+		width: 70%;
 	}
 }
 
@@ -448,5 +630,60 @@ hr {
 	.skill-container {
 	  padding: 25px;
 	  margin-top: 25px;
+	}
+	#projects .container {
+		margin-top: 25px;
+	}
+	.project {
+		width: 100%;
+	}
+	#projects .container .project:not(:last-child) {
+		padding-bottom: 25px;
+	}
+	#projects .container .project:not(:first-child) {
+		margin-top: 25px;
+	}
+	.timeline {
+		margin-top: 25px;
+	}
+	.work-experience-block {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		z-index: 1;
+		font-size: 16px;
+		margin-top: 45px;
+	}
+	.work-experience-block.in-view {
+		margin-top: 0;
+	}
+	.work-experience-block .date-loc {
+		position: relative;
+		width: 50%;
+		border-top: 1px solid rgba(3,169,244,0.6);
+		margin-top: 25px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.work-experience-block:nth-child(odd) .date-loc {
+		align-self: flex-end;
+		text-align: right;
+	}
+	.work-experience-block:nth-child(even) .date-loc {
+		align-self: flex-start;
+		text-align: left;
+	}
+	.work-experience-block:nth-child(odd) .date-loc::after {
+		right: calc(100% - 6px);
+		bottom: calc(100% - 5px);
+	}
+	.work-experience-block:nth-child(even) .date-loc::after {
+		left: calc(100% - 5px);
+		bottom: calc(100% - 5px);
+	}
+	.work-experience-block .description-card {
+		text-align: center;
+		width: 100%
+		max-width: 100%;
 	}
 }

@@ -3,6 +3,9 @@ window.onload = function() {
   loadMenu();
   typewrite();
   loadSliders();
+  loadProjects();
+  loadWorkExperience();
+  setListeners();
 };
 
 /* ----------------------------------------------------------------- MENU */
@@ -101,13 +104,45 @@ Typewriter.prototype.tick = function() {
 
 /* ----------------------------------------------------- SLIDER ANIMATION */
 
-var sliders, skillTitles;
+var skillGroups;
 function loadSliders(){
-	//sliders = document.querySelectorAll(".slider");
 	skillGroups = document.querySelectorAll(".skills");
+}
+
+function resetSliders() {
+	sliders.forEach(function(slider) {
+		slider.style.width = "0px";
+	});
+}
+
+/* ------------------------------------------------------------- PROJECTS */
+var projects;
+function loadProjects() {
+	projects = document.querySelectorAll("#projects .project");
+}
+
+/* ----------------------------------------------------------------- WORK */
+var workExperienceBlocks;
+function loadWorkExperience(){
+	workExperienceBlocks = document.querySelectorAll(".timeline .work-experience-block");
+	console.log(workExperienceBlocks);
+}
+ 
+/* ------------------------------------------------------------ UTILITIES */
+function inViewport(el) {
+	var rect = el.getBoundingClientRect();
+	return (
+		rect.top >= 0 && 
+		rect.left >= 0 &&
+		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+}
+
+function setListeners() {
 	window.addEventListener("scroll", checkViewport);
 	window.addEventListener("load", checkViewport);
-	// window.addEventListener("resize", );
+	//window.addEventListener("resize", checkViewport);
 }
 
 function checkViewport() {
@@ -125,22 +160,16 @@ function checkViewport() {
 			}
 		});		
 	}
-}
 
-function resetSliders() {
-	sliders.forEach(function(slider) {
-		slider.style.width = "0px";
+	projects.forEach(function(project){
+		if (inViewport(project)) {
+			project.classList.add("show");
+		}
+	});
+
+	workExperienceBlocks.forEach(function(el){
+		if (inViewport(el)) {
+			el.classList.add("in-view")
+		}
 	});
 }
-
-/* ------------------------------------------------------------ UTILITIES */
-function inViewport(el) {
-	var rect = el.getBoundingClientRect();
-	return (
-		rect.top >= 0 && 
-		rect.left >= 0 &&
-		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-		);
-}
-

@@ -42,6 +42,10 @@ strong {
 }
 section {
 	padding-bottom: 60px;
+	border-bottom: 1px solid rgba(3,169,244,0.2);
+}
+#contact {
+	border-bottom: none;
 }
 section:nth-child(odd) {
 	background-color: #FAFAFA;

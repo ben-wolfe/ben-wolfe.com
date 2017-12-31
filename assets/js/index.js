@@ -193,7 +193,7 @@ function elmYPosition(el) {
         node = node.offsetParent;
         y += node.offsetTop;
     } 
-    return y-60; // 60px offset to account for header
+    return y-61; // 60px offset to account for header
 }
 
 function smoothScroll(el) {

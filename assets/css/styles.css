@@ -6,7 +6,8 @@
 *::after{
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -60,10 +61,19 @@ hr {
 /* ----------------------------------------------------------------- HOME */
 
 #home {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	margin: 0;
 	padding: 0;
 	height: 100vh;
@@ -96,9 +106,15 @@ hr {
 /* ------------------------------------------------------------- ABOUT ME */
 
 #about-me .section-content {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 #about-me .section-content img {
     border-radius: 50%;
@@ -129,30 +145,48 @@ hr {
 	text-align: center;
 }
 .education-block {
-	box-shadow: 0 2px 4px #DDDDDD;
+	-webkit-box-shadow: 0 2px 4px #DDDDDD;
+	        box-shadow: 0 2px 4px #DDDDDD;
 }
 
 /* --------------------------------------------------------------- SKILLS */
 
 #skills .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	max-width: 100%;
 	width: 100%;
 }
 
 .skill-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   background-color: white;
 	border: 1px solid rgba(3,169,244,0.6);
-	box-shadow: 0 2px 4px #DDDDDD;
+	-webkit-box-shadow: 0 2px 4px #DDDDDD;
+	        box-shadow: 0 2px 4px #DDDDDD;
 }
 
 .skills {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	max-width: 100%;
 	width: 100%;
 	margin-top: 15px;
@@ -195,15 +229,29 @@ hr {
 /* -------------------------------------------------------------- PROJECTS */
 
 #projects .container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	width: 100%;
 }
 .project {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	text-align: center;
 	opacity: 0;
 	-webkit-transition: opacity 1000ms ease-in-out;
@@ -233,8 +281,13 @@ hr {
 }
 
 .work-timeline {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
 
 .vline {
@@ -248,6 +301,8 @@ hr {
 }
 
 .work-experience-block {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	font-weight: 300;
@@ -270,7 +325,8 @@ hr {
 .work-experience-block .description-card {
 	background-color: white;
 	border: 1px solid rgba(3,169,244,0.6);
-	box-shadow: 0 2px 4px #CBCBCB;
+	-webkit-box-shadow: 0 2px 4px #CBCBCB;
+	        box-shadow: 0 2px 4px #CBCBCB;
 	padding: 20px;
 }
 
@@ -300,15 +356,22 @@ hr {
 
 /* --------------------------------------------------------------- CONTACT */
 #contact .icons {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin: 0 auto;
 	width: 280px;
 	border: 1px solid rgba(3,169,244,0.6);
-	box-shadow: 0 2px 4px #DDDDDD;
+	-webkit-box-shadow: 0 2px 4px #DDDDDD;
+	        box-shadow: 0 2px 4px #DDDDDD;
 }
 
 #contact .icons img {
@@ -347,8 +410,12 @@ hr {
 		padding: 20px;
 	}
 	.university .sub-block {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		align-items: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		padding: 20px;
 	}
 	.university .sub-block-hr {
@@ -364,8 +431,12 @@ hr {
 		text-align: right;
 	}
 	.university .description {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: space-between;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
 		width: 100%;
 		border-left: 1px solid rgba(3,169,244,0.6);
 	}
@@ -402,23 +473,40 @@ hr {
 		margin-top: 30px;
 	}
 	.work-experience-block {
-		align-items: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		font-size: 18px;
 	}
 	.work-experience-block:nth-child(odd) {
-		justify-content: flex-end;
-		transform: translateX(45px);
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		-webkit-transform: translateX(45px);
+		    -ms-transform: translateX(45px);
+		        transform: translateX(45px);
 	}
 	.work-experience-block:nth-child(even) {
-		flex-direction: row-reverse;
-		justify-content: flex-end;
-		transform: translateX(-45px);
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		    -ms-flex-direction: row-reverse;
+		        flex-direction: row-reverse;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		-webkit-transform: translateX(-45px);
+		    -ms-transform: translateX(-45px);
+		        transform: translateX(-45px);
 	}
 	.work-experience-block:nth-child(odd).in-view {
-		transform: translateX(0px);
+		-webkit-transform: translateX(0px);
+		    -ms-transform: translateX(0px);
+		        transform: translateX(0px);
 	}
 	.work-experience-block:nth-child(even).in-view {
-		transform: translateX(0px);
+		-webkit-transform: translateX(0px);
+		    -ms-transform: translateX(0px);
+		        transform: translateX(0px);
 	}
 	.work-experience-block:nth-child(odd) .date-loc {
 		margin-right: 61px;
@@ -466,7 +554,10 @@ hr {
 		font-size: 16px;
 	}
 	#about-me .section-content {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 		margin-top: 30px;
 		text-align: center;
 	}
@@ -502,9 +593,14 @@ hr {
 		margin-left: 15px;
 	}
 	.online-courses .container {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 	}
 	.online-courses .container > div {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		width: 100%;
 	}
@@ -551,7 +647,9 @@ hr {
 	    margin-right: 40px;
 	}
 	#about-me .section-content {
-		align-items: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		margin-top: 50px;
 	}
 	h4 {
@@ -562,13 +660,19 @@ hr {
 		margin-left: 20px;
 	}
 	.online-courses .container {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: row;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: row;
+		        flex-direction: row;
 		width: 100%;
 	}
 	.online-courses .container > div {
 		max-width: 50%;
-		flex-basis: 50%;
+		-ms-flex-preferred-size: 50%;
+		    flex-basis: 50%;
 	}
 	.online-courses .sub-block {
 		width: 50%;
@@ -631,8 +735,13 @@ hr {
 		height: 40px;
 	}
 	.education-block .univeristy {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction; column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 		width: 100%;
 	}
 	#education .sub-block {
@@ -656,7 +765,10 @@ hr {
 		padding-bottom: 0;
 	}
 	#skills .container {
-		flex-direction: column;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
 	}
 	.skill-container {
 	  padding: 25px;
@@ -678,9 +790,16 @@ hr {
 		margin-top: 25px;
 	}
 	.work-experience-block {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-pack: start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
 		z-index: 1;
 		font-size: 16px;
 		margin-top: 45px;
@@ -697,11 +816,13 @@ hr {
 		padding-bottom: 5px;
 	}
 	.work-experience-block:nth-child(odd) .date-loc {
-		align-self: flex-end;
+		-ms-flex-item-align: end;
+		    align-self: flex-end;
 		text-align: right;
 	}
 	.work-experience-block:nth-child(even) .date-loc {
-		align-self: flex-start;
+		-ms-flex-item-align: start;
+		    align-self: flex-start;
 		text-align: left;
 	}
 	.work-experience-block:nth-child(odd) .date-loc::after {
@@ -714,7 +835,7 @@ hr {
 	}
 	.work-experience-block .description-card {
 		text-align: center;
-		width: 100%
+		width: 100%;
 		max-width: 100%;
 	}
 	#contact .icons {

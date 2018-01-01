@@ -14,7 +14,7 @@
   color: #4A4A4A;
 }
 
-.main-menu a:hover {
+body.hasHover .main-menu a:hover {
   color: #03A9F4;
 }
 

@@ -6,6 +6,7 @@ window.onload = function() {
   loadProjects();
   loadWorkExperience();
   setListeners();
+  watchForHover();
 };
 
 /* ----------------------------------------------------------------- MENU */
@@ -128,52 +129,7 @@ function loadWorkExperience(){
 	workExperienceBlocks = document.querySelectorAll(".timeline .work-experience-block");
 }
  
-/* ------------------------------------------------------------ UTILITIES */
-function inViewport(el) {
-	var rect = el.getBoundingClientRect();
-	return (
-		rect.top >= 0 && 
-		rect.left >= 0 &&
-		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-		);
-}
-
-function setListeners() {
-	window.addEventListener("scroll", checkViewport);
-	window.addEventListener("load", checkViewport);
-	//window.addEventListener("resize", checkViewport);
-}
-
-function checkViewport() {
-	var competency, sliders, groupName, query;
-	if (skillGroups) {
-		skillGroups.forEach(function(el){
-			if (inViewport(el)) {
-				groupName = el.classList[1];
-				query = "."+groupName+" .slider";
-				sliders = document.querySelectorAll(query);
-	    	sliders.forEach(function(skill) {
-		      competency = skill.getAttribute("data-progress-percent");
-		      skill.style.width = competency + "%"
-	    	})
-			}
-		});		
-	}
-
-	projects.forEach(function(project){
-		if (inViewport(project)) {
-			project.classList.add("show");
-		}
-	});
-
-	workExperienceBlocks.forEach(function(el){
-		if (inViewport(el)) {
-			el.classList.add("in-view")
-		}
-	});
-}
-
+/* -------------------------------------------------------- SMOOTH SCROLL */
 function currentYPosition() {
     // Firefox, Chrome, Opera, Safari
     if (self.pageYOffset) return self.pageYOffset;
@@ -222,4 +178,83 @@ function smoothScroll(el,event) {
         setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
         leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
     }
+}
+
+/* ---------------------------------------------------------------- HOVER */
+function watchForHover() {
+  var hasHoverClass = false;
+  var container = document.body;
+  var lastTouchTime = 0;
+
+  function enableHover() {
+      // filter emulated events coming from touch events
+      if (new Date() - lastTouchTime < 500) return;
+      if (hasHoverClass) return;
+
+      container.className += ' hasHover';
+      hasHoverClass = true;
+  }
+
+  function disableHover() {
+      if (!hasHoverClass) return;
+
+      container.className = container.className.replace(' hasHover', '');
+      hasHoverClass = false;
+  }
+
+  function updateLastTouchTime() {
+      lastTouchTime = new Date();
+  }
+
+  document.addEventListener('touchstart', updateLastTouchTime, true);
+  document.addEventListener('touchstart', disableHover, true);
+  document.addEventListener('mousemove', enableHover, true);
+
+  enableHover();
+}
+
+/* ------------------------------------------------------------ UTILITIES */
+function inViewport(el) {
+	var rect = el.getBoundingClientRect();
+	return (
+		rect.top >= 0 && 
+		rect.left >= 0 &&
+		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+}
+
+function setListeners() {
+	window.addEventListener("scroll", checkViewport);
+	window.addEventListener("load", checkViewport);
+	//window.addEventListener("resize", checkViewport);
+}
+
+function checkViewport() {
+	var competency, sliders, groupName, query;
+	if (skillGroups) {
+		skillGroups.forEach(function(el){
+			if (inViewport(el)) {
+				groupName = el.classList[1];
+				query = "."+groupName+" .slider";
+				sliders = document.querySelectorAll(query);
+	    	sliders.forEach(function(skill) {
+		      competency = skill.getAttribute("data-progress-percent");
+		      skill.style.width = competency + "%"
+	    	})
+			}
+		});		
+	}
+
+	projects.forEach(function(project){
+		if (inViewport(project)) {
+			project.classList.add("show");
+		}
+	});
+
+	workExperienceBlocks.forEach(function(el){
+		if (inViewport(el)) {
+			el.classList.add("in-view")
+		}
+	});
 }

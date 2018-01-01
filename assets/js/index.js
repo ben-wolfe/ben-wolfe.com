@@ -24,6 +24,7 @@ function loadMenu() {
 		toggleDropdown();
 	});
 
+  var url
 	pageLink.forEach(function(el) {
 		el.addEventListener("click", function(event) {
 			toggleDropdown();
@@ -132,53 +133,53 @@ function loadWorkExperience(){
  
 /* -------------------------------------------------------- SMOOTH SCROLL */
 function currentYPosition() {
-    // Firefox, Chrome, Opera, Safari
-    if (self.pageYOffset) return self.pageYOffset;
-    // Internet Explorer 6 - standards mode
-    if (document.documentElement && document.documentElement.scrollTop)
-        return document.documentElement.scrollTop;
-    // Internet Explorer 6, 7 and 8
-    if (document.body.scrollTop) return document.body.scrollTop;
-    return 0;
+  // Firefox, Chrome, Opera, Safari
+  if (self.pageYOffset) return self.pageYOffset;
+  // Internet Explorer 6 - standards mode
+  if (document.documentElement && document.documentElement.scrollTop)
+      return document.documentElement.scrollTop;
+  // Internet Explorer 6, 7 and 8
+  if (document.body.scrollTop) return document.body.scrollTop;
+  return 0;
 }
 
 function elmYPosition(el) {
-    var elm = document.querySelector(el);
-    var y = elm.offsetTop;
-    var node = elm;
-    while (node.offsetParent && node.offsetParent != document.body) {
-        node = node.offsetParent;
-        y += node.offsetTop;
-    } 
-    return y-61; // 60px offset to account for header
+  var elm = document.querySelector(el);
+  var y = elm.offsetTop;
+  var node = elm;
+  while (node.offsetParent && node.offsetParent != document.body) {
+    node = node.offsetParent;
+    y += node.offsetTop;
+  } 
+  return y-61; // 60px offset to account for header
 }
 
 function smoothScroll(el,event) {
-    var startY = currentYPosition();
-    var stopY = elmYPosition(el);
-    var distance = stopY > startY ? stopY - startY : startY - stopY;
+  var startY = currentYPosition();
+  var stopY = elmYPosition(el);
+  var distance = stopY > startY ? stopY - startY : startY - stopY;
 
-    if (distance === 0) {
-        event.preventDefault()
-    }
-    
-    var speed = Math.round(distance / 100);
-    if (speed >= 20) speed = 20;
-    var step = Math.round(distance / 25);
-    var leapY = stopY > startY ? startY + step : startY - step;
-    var timer = 0;
+  if (distance === 0) {
+      event.preventDefault()
+  }
+  
+  var speed = Math.round(distance / 100);
+  if (speed >= 20) speed = 20;
+  var step = Math.round(distance / 25);
+  var leapY = stopY > startY ? startY + step : startY - step;
+  var timer = 0;
 
-    if (stopY > startY) {
-        for ( var i=startY; i<stopY; i+=step ) {
-            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-            leapY += step; if (leapY > stopY) leapY = stopY; timer++;
-        } 
-        return;
-    }
-    for ( var i=startY; i>stopY; i-=step ) {
-        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
-        leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
-    }
+  if (stopY > startY) {
+    for ( var i=startY; i<stopY; i+=step ) {
+      setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+      leapY += step; if (leapY > stopY) leapY = stopY; timer++;
+    } 
+    return;
+  }
+  for ( var i=startY; i>stopY; i-=step ) {
+    setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
+    leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
+  }
 }
 
 /* ---------------------------------------------------------------- HOVER */
@@ -188,23 +189,21 @@ function watchForHover() {
   var lastTouchTime = 0;
 
   function enableHover() {
-      // filter emulated events coming from touch events
-      if (new Date() - lastTouchTime < 500) return;
-      if (hasHoverClass) return;
-
-      container.className += ' hasHover';
-      hasHoverClass = true;
+    // filter emulated events coming from touch events
+    if (new Date() - lastTouchTime < 500) return;
+    if (hasHoverClass) return;
+    container.className += ' hasHover';
+    hasHoverClass = true;
   }
 
   function disableHover() {
-      if (!hasHoverClass) return;
-
-      container.className = container.className.replace(' hasHover', '');
-      hasHoverClass = false;
+    if (!hasHoverClass) return;
+    container.className = container.className.replace(' hasHover', '');
+    hasHoverClass = false;
   }
 
   function updateLastTouchTime() {
-      lastTouchTime = new Date();
+    lastTouchTime = new Date();
   }
 
   document.addEventListener('touchstart', updateLastTouchTime, true);
@@ -222,7 +221,7 @@ function inViewport(el) {
 		rect.left >= 0 &&
 		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-		);
+	);
 }
 
 function setListeners() {

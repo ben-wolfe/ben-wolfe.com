@@ -221,9 +221,9 @@ hr {
   transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .skill-hr {
-	background-color: #D8D8D8;
-	margin-top: 15px;
+	margin: 15px auto 0 auto;
 	width: 80%;
+	background-color: #D8D8D8;
 }
 
 /* -------------------------------------------------------------- PROJECTS */

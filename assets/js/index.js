@@ -55,53 +55,54 @@ function typewrite() {
 }
 
 var Typewriter = function(el, words) {
-    this.words = words;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
+  this.words = words;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = 1250;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
 };
 
 Typewriter.prototype.tick = function() {
 
-    if (this.el.classList.contains("blink")) {
-      this.el.classList.toggle("blink");
-    }
+  if (this.el.classList.contains("blink")) {
+    this.el.classList.toggle("blink");
+  }
 
-    var i = this.loopNum % this.words.length;
-    var fullTxt = this.words[i];
+  var i = this.loopNum % this.words.length;
+  var fullTxt = this.words[i];
 
-    if (this.isDeleting) 
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-    else 
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
+  if (this.isDeleting) 
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  else 
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
 
-    this.el.innerHTML = this.txt;
+  this.el.innerHTML = this.txt;
 
-    var that = this;
-    var delta = 200 - Math.random() * 100;
+  var that = this;
+  var delta = 125 - Math.random()*50; // Typing
 
-    if (this.isDeleting) { 
-        delta /= 2; 
-    }
+  if (this.isDeleting) { 
+    delta = 90; // Deleting
+  }
 
-    if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        this.el.classList.toggle("blink");
+  if (!this.isDeleting && this.txt === fullTxt) {
+    if (i === this.words.length-1) delta = 5000;
+    else delta = this.period;
+    this.isDeleting = true;
+    this.el.classList.toggle("blink");
 
-    } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 1000;
-        this.el.classList.toggle("blink");
-    }
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 1000;
+    this.el.classList.toggle("blink");
+  }
 
-    setTimeout(function() { 
-        that.tick(); 
-    }, delta);
+  setTimeout(function() { 
+    that.tick(); 
+  }, delta);
 };
 
 /* ----------------------------------------------------- SLIDER ANIMATION */

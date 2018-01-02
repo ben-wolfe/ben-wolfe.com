@@ -17,6 +17,17 @@ h1 {
 	font-weight: 400;
 	text-transform: uppercase;
 }
+h1,h2 {
+	opacity: 0.0;
+	transform: translateY(30px);
+	transition: all 1000ms ease-in-out;
+	transition-property: opacity, transform;
+}
+h1.show,
+h2.show {
+	opacity: 1.0;
+	transform: translateY(0);
+}
 h1, h2 {
 	margin: 0;
 }

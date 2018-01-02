@@ -1,13 +1,27 @@
 
 window.onload = function() {
   loadMenu();
-  typewrite();
+  greeting();
   loadSliders();
   loadProjects();
   loadWorkExperience();
   setListeners();
   watchForHover();
 };
+
+/* -------------------------------------------------------------- GREETING */
+function greeting() {
+  var greeting = document.querySelector("h1");
+  var desc     = document.querySelector("h2");
+  greeting.classList.add("show")
+  setTimeout(function(){
+    desc.classList.add("show");
+  },1000);
+  setTimeout(function(){
+    typewrite();
+  },2000);
+}
+
 
 /* ----------------------------------------------------------------- MENU */
 
@@ -89,7 +103,8 @@ Typewriter.prototype.tick = function() {
   }
 
   if (!this.isDeleting && this.txt === fullTxt) {
-    if (i === this.words.length-1) delta = 5000;
+    console.log(this.loopNum);
+    if (i === this.words.length-1) delta = 6000;
     else delta = this.period;
     this.isDeleting = true;
     this.el.classList.toggle("blink");

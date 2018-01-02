@@ -19,14 +19,24 @@ h1 {
 }
 h1,h2 {
 	opacity: 0.0;
-	transform: translateY(30px);
+	-webkit-transform: translateY(30px);
+	    -ms-transform: translateY(30px);
+	        transform: translateY(30px);
+	-webkit-transition: all 1000ms ease-in-out;
+	-o-transition: all 1000ms ease-in-out;
 	transition: all 1000ms ease-in-out;
+	-webkit-transition-property: opacity, -webkit-transform;
+	transition-property: opacity, -webkit-transform;
+	-o-transition-property: opacity, transform;
 	transition-property: opacity, transform;
+	transition-property: opacity, transform, -webkit-transform;
 }
 h1.show,
 h2.show {
 	opacity: 1.0;
-	transform: translateY(0);
+	-webkit-transform: translateY(0);
+	    -ms-transform: translateY(0);
+	        transform: translateY(0);
 }
 h1, h2 {
 	margin: 0;

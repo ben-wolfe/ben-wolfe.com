@@ -103,7 +103,6 @@ Typewriter.prototype.tick = function() {
   }
 
   if (!this.isDeleting && this.txt === fullTxt) {
-    console.log(this.loopNum);
     if (i === this.words.length-1) delta = 6000;
     else delta = this.period;
     this.isDeleting = true;
